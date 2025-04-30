@@ -16,8 +16,8 @@ public class OllamaController {
         this.chatClient = ChatClient.create(chatModel);
     }
 
-    @GetMapping("/")
-public ResponseEntity<String> getAnswer(@RequestParam String message) {
+    @GetMapping("/")  
+public ResponseEntity<String> getAnswer(@RequestParam String message) { //dont use path variable 
     ChatResponse chatResponse = chatClient
             .prompt(message)
             .call()
